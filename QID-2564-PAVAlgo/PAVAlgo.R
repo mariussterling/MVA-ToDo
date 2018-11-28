@@ -52,6 +52,9 @@ PAV = function(X, Y, FUN = mean, ..., left = TRUE, ordered = FALSE){
 library("copula")
 set.seed(1)
 Data = apply(X = rCopula(250, tCopula(0.9, dim = 2)), 2, FUN = qt, df = 4);
+# Data = rbind(Data,c(-8,5))
+Data = rbind(Data,c(0,-8))
+
 
 result.left = PAV(Data[, 1], Data[, 2], FUN = mean)
 
